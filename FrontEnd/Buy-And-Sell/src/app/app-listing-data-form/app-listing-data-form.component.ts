@@ -12,7 +12,7 @@ export class AppListingDataFormComponent implements OnInit{
 
   @Input() currentName = '';
   @Input() currentDescription = '';
-  @Input() currentPrice = '';
+  @Input() currentPrice = 0;
 
   name: string = '';
   description: string = '';
