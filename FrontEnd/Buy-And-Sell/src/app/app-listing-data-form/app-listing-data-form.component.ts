@@ -19,7 +19,7 @@ export class AppListingDataFormComponent implements OnInit{
   price: string = '';
   listingId: string = '';
 
-  @Output() onSubmitPut = new EventEmitter<Listing>();
+  @Output() onSubmit = new EventEmitter<Listing>();
 
   constructor(
     private route: ActivatedRoute,
@@ -32,7 +32,7 @@ export class AppListingDataFormComponent implements OnInit{
   }
 
   OnButtonClicked(){
-    this.onSubmitPut.emit({
+    this.onSubmit.emit({
       id: this.listingId,
       name: this.name,
       description: this.description,

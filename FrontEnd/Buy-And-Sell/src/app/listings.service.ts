@@ -9,7 +9,7 @@ import { Listing } from './types';
 export class ListingsService {
 
   
-  private url: string = 'http://locahost:8080/api';
+  private url: string = 'http://localhost:8080/api';
   constructor(
     private http: HttpClient,
   ) { }
@@ -36,6 +36,10 @@ export class ListingsService {
 
   deleteListingRoute(id: string): Observable<string>{
     return this.http.delete<string>(`http://localhost:8080/api/listings/${id}`);
+  }
+
+  updateListingRoute(id: string): Observable<Listing>{
+    return this.http.put<Listing>(`http://localhost:8080/api/listings/${id}`, {});
   }
 
 }
